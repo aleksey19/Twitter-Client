@@ -1,0 +1,26 @@
+PODS:
+  - EasyMapping (0.15.5):
+    - EasyMapping/Core (= 0.15.5)
+  - EasyMapping/Core (0.15.5)
+  - Kiwi (2.4.0)
+  - ReactiveCocoa (2.5):
+    - ReactiveCocoa/UI (= 2.5)
+  - ReactiveCocoa/Core (2.5):
+    - ReactiveCocoa/no-arc
+  - ReactiveCocoa/no-arc (2.5)
+  - ReactiveCocoa/UI (2.5):
+    - ReactiveCocoa/Core
+
+DEPENDENCIES:
+  - EasyMapping (~> 0.15.0)
+  - Kiwi
+  - ReactiveCocoa (= 2.5)
+
+SPEC CHECKSUMS:
+  EasyMapping: 1433e72eb5224445842ba6e4ca9363dbb8503998
+  Kiwi: f49c9d54b28917df5928fe44968a39ed198cb8a8
+  ReactiveCocoa: e2db045570aa97c695e7aa97c2bcab222ae51f4a
+
+PODFILE CHECKSUM: 377e68cbf30cd5eb1355670f2a609955ebda37f0
+
+COCOAPODS: 1.0.1
