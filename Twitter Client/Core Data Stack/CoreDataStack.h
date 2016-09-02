@@ -12,5 +12,6 @@
 @interface CoreDataStack : NSObject
 
 - (NSManagedObjectContext *)getMainObjectContext;
+- (void)saveContext:(NSManagedObjectContext *)managedObjectContext;
 
 @end

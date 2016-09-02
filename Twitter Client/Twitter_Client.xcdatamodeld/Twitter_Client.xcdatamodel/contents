@@ -1,4 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model name="Test1.xcdatamodel" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="1" systemVersion="11A491" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
-    <elements/>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="10174" systemVersion="15A284" minimumToolsVersion="Automatic">
+    <entity name="Tweet" representedClassName="Tweet" syncable="YES">
+        <attribute name="author_avatar_url" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="author_name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="created_at" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="image_url" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="retweet_count" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="tweet_id" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="tweet_text" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Tweet" positionX="-63" positionY="-18" width="128" height="150"/>
+    </elements>
 </model>

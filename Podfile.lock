@@ -3,6 +3,7 @@ PODS:
     - EasyMapping/Core (= 0.15.5)
   - EasyMapping/Core (0.15.5)
   - Kiwi (2.4.0)
+  - Reachability (3.2)
   - ReactiveCocoa (2.5):
     - ReactiveCocoa/UI (= 2.5)
   - ReactiveCocoa/Core (2.5):
@@ -10,17 +11,24 @@ PODS:
   - ReactiveCocoa/no-arc (2.5)
   - ReactiveCocoa/UI (2.5):
     - ReactiveCocoa/Core
+  - SDWebImage (3.8.1):
+    - SDWebImage/Core (= 3.8.1)
+  - SDWebImage/Core (3.8.1)
 
 DEPENDENCIES:
   - EasyMapping (~> 0.15.0)
   - Kiwi
+  - Reachability
   - ReactiveCocoa (= 2.5)
+  - SDWebImage (~> 3.8)
 
 SPEC CHECKSUMS:
   EasyMapping: 1433e72eb5224445842ba6e4ca9363dbb8503998
   Kiwi: f49c9d54b28917df5928fe44968a39ed198cb8a8
+  Reachability: 33e18b67625424e47b6cde6d202dce689ad7af96
   ReactiveCocoa: e2db045570aa97c695e7aa97c2bcab222ae51f4a
+  SDWebImage: 35f9627a3e44b4f292a8a8ce6a531fa488239b91
 
-PODFILE CHECKSUM: 377e68cbf30cd5eb1355670f2a609955ebda37f0
+PODFILE CHECKSUM: 1b32b36afeb0e0315bddf626d00a7c4c1767a3b2
 
 COCOAPODS: 1.0.1

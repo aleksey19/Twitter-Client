@@ -31,7 +31,7 @@
 
 - (void)initializeCoreData
 {
-    NSURL *modelURL = [[NSBundle mainBundle] URLForResource:@"TopRegions" withExtension:@"momd"];
+    NSURL *modelURL = [[NSBundle mainBundle] URLForResource:@"Twitter_Client" withExtension:@"momd"];
     NSManagedObjectModel *mom = [[NSManagedObjectModel alloc] initWithContentsOfURL:modelURL];
     NSAssert(mom != nil, @"Error! Managed Object Model shouldn't be nil");
     
@@ -42,7 +42,7 @@
     
     NSFileManager *fileManager = [NSFileManager defaultManager];
     NSURL *documentURL = [[fileManager URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask] lastObject];
-    NSURL *storeURL = [documentURL URLByAppendingPathComponent:@"TopRegions.sqlite"];
+    NSURL *storeURL = [documentURL URLByAppendingPathComponent:@"Twitter_Client.sqlite"];
     
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         NSError *error = nil;
@@ -57,6 +57,19 @@
 - (NSManagedObjectContext *)getMainObjectContext
 {
     return self.managedObjectContext;
+}
+
+#pragma mark - Save context
+
+- (void)saveContext:(NSManagedObjectContext *)managedObjectContext
+{
+    NSError *error = nil;
+    if (managedObjectContext != nil) {
+        if ([managedObjectContext hasChanges] && ![managedObjectContext save:&error]) {
+            NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
+            abort();
+        }
+    }
 }
 
 @end

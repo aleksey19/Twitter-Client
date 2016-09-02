@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "CoreDataTableViewController.h"
 
-@interface TwitterViewController : UIViewController
+@interface TwitterViewController : CoreDataTableViewController
 
 @end
