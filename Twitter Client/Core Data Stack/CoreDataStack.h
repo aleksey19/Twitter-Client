@@ -11,6 +11,7 @@
 
 @interface CoreDataStack : NSObject
 
+- (instancetype)initWithStorageType:(NSString *)storageType;
 - (NSManagedObjectContext *)getMainObjectContext;
 - (void)saveContext:(NSManagedObjectContext *)managedObjectContext;
 

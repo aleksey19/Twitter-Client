@@ -21,6 +21,7 @@
 		5B45A8861D795D1A0025B94F /* TweetCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B45A8851D795D1A0025B94F /* TweetCell.m */; };
 		5B7F5D9E1D7836B10092AEB4 /* InterlayerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B7F5D9D1D7836B10092AEB4 /* InterlayerController.m */; };
 		5BA4D56B1D76FDFC00C85B5C /* TwitterService.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BA4D56A1D76FDFC00C85B5C /* TwitterService.m */; };
+		5BF208731D7AE23700D65F15 /* EKManagedObjectModel+UnitTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BF208721D7AE23700D65F15 /* EKManagedObjectModel+UnitTests.m */; };
 		5BFC20281D79835F00B25C1C /* AlertManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BFC20271D79835F00B25C1C /* AlertManager.m */; };
 		5BFC202C1D79876900B25C1C /* CoreDataTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BFC202B1D79876900B25C1C /* CoreDataTableViewController.m */; };
 		5BFC20301D79961E00B25C1C /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5BFC202F1D79961E00B25C1C /* SystemConfiguration.framework */; };
@@ -66,6 +67,8 @@
 		5B7F5D9D1D7836B10092AEB4 /* InterlayerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = InterlayerController.m; path = "Interlayer Controller/InterlayerController.m"; sourceTree = "<group>"; };
 		5BA4D5691D76FDFC00C85B5C /* TwitterService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TwitterService.h; path = "Twitter Service/TwitterService.h"; sourceTree = "<group>"; };
 		5BA4D56A1D76FDFC00C85B5C /* TwitterService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TwitterService.m; path = "Twitter Service/TwitterService.m"; sourceTree = "<group>"; };
+		5BF208711D7AE23700D65F15 /* EKManagedObjectModel+UnitTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "EKManagedObjectModel+UnitTests.h"; path = "EKManagedObjectModel Category For Unit Tests/EKManagedObjectModel+UnitTests.h"; sourceTree = "<group>"; };
+		5BF208721D7AE23700D65F15 /* EKManagedObjectModel+UnitTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "EKManagedObjectModel+UnitTests.m"; path = "EKManagedObjectModel Category For Unit Tests/EKManagedObjectModel+UnitTests.m"; sourceTree = "<group>"; };
 		5BFC20261D79835F00B25C1C /* AlertManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AlertManager.h; path = "View/Alert Manager/AlertManager.h"; sourceTree = "<group>"; };
 		5BFC20271D79835F00B25C1C /* AlertManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AlertManager.m; path = "View/Alert Manager/AlertManager.m"; sourceTree = "<group>"; };
 		5BFC202A1D79876900B25C1C /* CoreDataTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CoreDataTableViewController.h; path = "Core Data Table View Controller/CoreDataTableViewController.h"; sourceTree = "<group>"; };
@@ -170,6 +173,7 @@
 		5B07CE351D75FE0A0092028E /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				5BF208701D7AE1B700D65F15 /* Category For Unit Tests */,
 				5B07CE441D75FE0A0092028E /* Assets.xcassets */,
 				5B07CE491D75FE0A0092028E /* Info.plist */,
 				5B07CE361D75FE0A0092028E /* main.m */,
@@ -248,6 +252,15 @@
 				5BA4D56A1D76FDFC00C85B5C /* TwitterService.m */,
 			);
 			name = "Twitter Service";
+			sourceTree = "<group>";
+		};
+		5BF208701D7AE1B700D65F15 /* Category For Unit Tests */ = {
+			isa = PBXGroup;
+			children = (
+				5BF208711D7AE23700D65F15 /* EKManagedObjectModel+UnitTests.h */,
+				5BF208721D7AE23700D65F15 /* EKManagedObjectModel+UnitTests.m */,
+			);
+			name = "Category For Unit Tests";
 			sourceTree = "<group>";
 		};
 		5BFC20251D79833400B25C1C /* Alert Manager */ = {
@@ -483,6 +496,7 @@
 				5BFC202C1D79876900B25C1C /* CoreDataTableViewController.m in Sources */,
 				5BFC20281D79835F00B25C1C /* AlertManager.m in Sources */,
 				5B07CE601D7603AF0092028E /* CoreDataStack.m in Sources */,
+				5BF208731D7AE23700D65F15 /* EKManagedObjectModel+UnitTests.m in Sources */,
 				5B45A8861D795D1A0025B94F /* TweetCell.m in Sources */,
 				5BA4D56B1D76FDFC00C85B5C /* TwitterService.m in Sources */,
 				5B07CE431D75FE0A0092028E /* Twitter_Client.xcdatamodeld in Sources */,

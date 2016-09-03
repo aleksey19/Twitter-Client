@@ -18,18 +18,18 @@
 
 #pragma mark - Designated initializer
 
-- (instancetype)init
+- (instancetype)initWithStorageType:(NSString *)storageType
 {
     self = [super init];
     
     if (self) {
-        [self initializeCoreData];
+        [self initializeCoreDataWithStorageType:storageType];
     }
     
     return self;
 }
 
-- (void)initializeCoreData
+- (void)initializeCoreDataWithStorageType:(NSString *)storageType
 {
     NSURL *modelURL = [[NSBundle mainBundle] URLForResource:@"Twitter_Client" withExtension:@"momd"];
     NSManagedObjectModel *mom = [[NSManagedObjectModel alloc] initWithContentsOfURL:modelURL];
@@ -47,7 +47,7 @@
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         NSError *error = nil;
         NSPersistentStoreCoordinator *psc = self.managedObjectContext.persistentStoreCoordinator;
-        NSPersistentStore *store = [psc addPersistentStoreWithType:NSSQLiteStoreType configuration:nil URL:storeURL options:nil error:&error];
+        NSPersistentStore *store = [psc addPersistentStoreWithType:storageType configuration:nil URL:storeURL options:nil error:&error];
         NSAssert(store != nil, @"Error initializing PSC: %@\n%@", [error localizedDescription], [error userInfo]);
     });
 }
