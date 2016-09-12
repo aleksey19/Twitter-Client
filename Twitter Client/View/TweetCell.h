@@ -13,6 +13,7 @@
 @property (weak, nonatomic) IBOutlet UIImageView *authorAvatarImageView;
 @property (weak, nonatomic) IBOutlet UIImageView *tweetImageView;
 @property (weak, nonatomic) IBOutlet UILabel *authorNameLabel;
+@property (weak, nonatomic) IBOutlet UILabel *tweetDateLabel;
 @property (weak, nonatomic) IBOutlet UILabel *tweetTextLabel;
 
 @end

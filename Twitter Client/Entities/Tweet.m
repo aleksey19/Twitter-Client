@@ -16,7 +16,7 @@
 {
     return [EKManagedObjectMapping mappingForEntityName:@"Tweet" withBlock:^(EKManagedObjectMapping *mapping) {
         [mapping mapKeyPath:@"created_at" toProperty:@"created_at"];
-        [mapping mapKeyPath:@"entities.media.media_url" toProperty:@"image_url"];
+//        [mapping mapKeyPath:@"entities.media.media_url" toProperty:@"image_url"];
         [mapping mapKeyPath:@"id" toProperty:@"tweet_id"];
         [mapping mapKeyPath:@"retweet_count" toProperty:@"retweet_count"];
         [mapping mapKeyPath:@"text" toProperty:@"tweet_text"];
@@ -35,12 +35,9 @@
     
     NSError *error = nil;
     NSArray *tweets = [context executeFetchRequest:request error:&error];
-    
-    request.predicate = nil;
-    NSArray *tweets2 = [context executeFetchRequest:request error:&error];
-    
+        
     if (error || (tweets.count > 1) || !tweets) {
-#warning handle case
+        tweet = [tweets lastObject];
     }
     else if (tweets.count == 1) {
         tweet = [tweets lastObject];

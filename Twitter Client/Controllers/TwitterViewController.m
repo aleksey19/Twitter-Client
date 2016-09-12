@@ -162,6 +162,7 @@
     Tweet *tweet = [[self fetchedResultsController] objectAtIndexPath:indexPath];
     
     cell.authorNameLabel.text = tweet.author_name;
+    cell.tweetDateLabel.text = [NSString stringWithFormat:@"%@", tweet.created_at];
     cell.tweetTextLabel.text = tweet.tweet_text;
     
     [cell.authorAvatarImageView sd_setImageWithURL:[NSURL URLWithString:tweet.author_avatar_url]
