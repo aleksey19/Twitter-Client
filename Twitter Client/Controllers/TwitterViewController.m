@@ -24,7 +24,6 @@
 @property (nonatomic, strong) InterlayerController *interlayerController;
 @property (nonatomic, strong) NSManagedObjectContext *mainContext;
 @property (nonatomic, strong) ACAccount *account;
-@property (nonatomic) BOOL granted;
 
 @property (weak, nonatomic) IBOutlet UIRefreshControl *spinner;
 
@@ -63,11 +62,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self setupView];
-}
-
-- (void)viewWillAppear:(BOOL)animated
-{
-    [super viewWillAppear:animated];
+    
     [self getAccessToTwitterAccount];
 }
 
@@ -80,7 +75,7 @@
     
     self.tableView.estimatedRowHeight = 240.0f;
     self.tableView.rowHeight = UITableViewAutomaticDimension;
-    self.granted = NO;
+    NSLog(@"%@", self.mainContext);
 }
 
 - (void)setupNavBarTitle
@@ -94,13 +89,8 @@
 
 - (IBAction)refreshTableView
 {
-    if (self.granted) {
-        [self.spinner beginRefreshing];
-        [self requestTweets];
-    } else {
-        [self.spinner endRefreshing];
-        [AlertManager showAlertWithTitle:@"Access error" message:@"Add twitter account in settings before authorization." forController:self];
-    }
+    [self.spinner beginRefreshing];
+    [self requestTweets];
 }
 
 #pragma mark - Get access to twitter account
@@ -110,30 +100,27 @@
     ACAccountStore *accountStore = [[ACAccountStore alloc] init];
     ACAccountType *accountTypeTwitter = [accountStore accountTypeWithAccountTypeIdentifier:ACAccountTypeIdentifierTwitter];
     
-    __weak TwitterViewController *weakSelf = self;
-    
     [accountStore requestAccessToAccountsWithType:accountTypeTwitter
                                           options:nil
                                        completion:^(BOOL granted, NSError *error) {
                                            if (granted) {
-                                               weakSelf.granted = granted;
                                                NSArray *accounts = [accountStore accountsWithAccountType:accountTypeTwitter];
                                                
                                                if (accounts.count) {
-                                                   weakSelf.account = [accounts lastObject];
+                                                   self.account = [accounts lastObject];
                                                    
                                                    
-                                                   [weakSelf setupNavBarTitle];
-                                                   [weakSelf requestTweets];
+                                                   [self setupNavBarTitle];
+                                                   [self requestTweets];
                                                    
                                                } else {
                                                    dispatch_async(dispatch_get_main_queue(), ^{
-                                                       [AlertManager showAlertWithTitle:@"Access error" message:@"Add twitter account in settings before authorization." forController:weakSelf];
+                                                       [AlertManager showAlertWithTitle:@"Access error" message:@"Add twitter account in settings before authorization." forController:self];
                                                    });
                                                }
                                            } else {
                                                dispatch_async(dispatch_get_main_queue(), ^{
-                                                   [AlertManager showAlertWithTitle:@"Access error" message:@"Sorry, can't authorize without access to your twitter account." forController:weakSelf];
+                                                   [AlertManager showAlertWithTitle:@"Access error" message:@"Sorry, can't authorize without access to your twitter account." forController:self];
                                                });
                                            }
                                        }];
